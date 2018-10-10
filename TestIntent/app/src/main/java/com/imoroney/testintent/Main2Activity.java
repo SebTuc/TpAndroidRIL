@@ -25,14 +25,26 @@ public class Main2Activity extends Activity {
         button2.setOnClickListener(new Button.OnClickListener(){
 
             public void onClick(View view){
-                Intent defineIntent = new Intent(lecontext,MainActivity.class);
+               /* Intent defineIntent = new Intent(lecontext,MainActivity.class);
                 Bundle objetbunble = new Bundle();
                 objetbunble.putString("passInfo","Hello World");
                 defineIntent.putExtras(objetbunble);
                 int codeRetour = 1;
                 setResult(codeRetour,defineIntent);
-                finish();
+                finish();*/
+                Intent defineIntent = new Intent(lecontext,Main3Activity.class);
+                lecontext.startActivityForResult(defineIntent,1);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == 200) {
+               finish();
+            }
+        }
     }
 }

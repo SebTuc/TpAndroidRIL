@@ -28,12 +28,12 @@ public class MainActivity extends Activity{
                 Bundle objetbunble = new Bundle();
                 objetbunble.putString("passInfo",textChampSaisie.getText().toString());
                 defineIntent.putExtras(objetbunble);
-                lecontext.startActivityForResult(defineIntent,1);
+                lecontext.startActivity(defineIntent);
             }
         });
     }
 
-    @Override
+    /*@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
@@ -42,7 +42,7 @@ public class MainActivity extends Activity{
                 textChampSaisie.setText(data.getStringExtra("passInfo"));
             }
         }
-    }
+    }*/
     /*public void onClick(View v){
         if(v==button){
             Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
